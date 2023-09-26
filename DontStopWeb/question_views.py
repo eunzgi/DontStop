@@ -1,4 +1,4 @@
-from pybo.forms import QuestionForm
+from pybo import QuestionForm
 from flask import Blueprint, render_template, url_for
 
 bp = Blueprint('main', __name__, url_prefix='/')

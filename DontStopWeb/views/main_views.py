@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, url_for
+from flask import Blueprint, render_template, url_for, current_app
 from werkzeug.utils import redirect
 from flask import request
 
@@ -6,27 +6,27 @@ from flask import request
 bp = Blueprint('main', __name__, url_prefix='/')
 
 
-@bp.route('/')
-def hello_pybo():
-    return 'Hello, Pybo!'
+# @bp.route('/')
+# def hello_pybo():
+#     return 'Hello, Pybo!'
 
 @bp.route('/', methods= ['POST','GET'])
 def index():
     return render_template('index.html')
 
-@bp.route('/inquire', methods=['GET'])
+@bp.route('/inquire/', methods=['GET'])
 def inquire():
     return render_template('inquire.html')
 
-@bp.route('/inquire_food', methods=['GET'])
+@bp.route('/inquire_food/', methods=['GET'])
 def inquire_food():
     return render_template('inquire_food.html')
 
-@bp.route('/inquire_cafe', methods=['GET'])
+@bp.route('/inquire_cafe/', methods=['GET'])
 def inquire_cafe():
     return render_template('inquire_cafe.html')
 
-@bp.route('/notice', methods=['GET'])
+@bp.route('/notice/', methods=['GET'])
 def notice():
     return render_template('notice.html')
 
